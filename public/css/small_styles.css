@@ -1,0 +1,57 @@
+@media (max-width: 900px) {
+    .container {
+        padding: 10px;
+    }
+
+    .small-container {
+        padding: 5px;
+    }
+
+    .board-base {
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .pc-menu {
+        display: none;
+    }
+
+    .sp-menu {
+        display: block;
+    }
+    
+    .pc-title {
+        display: none;
+    }
+
+    .sp-title {
+        display: block;
+    }
+    
+    /* main */
+    main {
+        min-height: calc(100vh - 220px - 200px - 10px);
+    }
+
+    .message-board-box h2 {
+        margin-bottom: 5px;
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    /* footer */
+    .footer-box {
+        height: 220px;
+    }
+    
+    footer .box {
+        width: 100%;
+    }
+}

@@ -1,0 +1,44 @@
+services:
+  php-app-dev:
+    container_name: fu3-php-dev
+    build: ./
+    ports:
+      - "8080:80"
+    volumes: 
+      - ./:/var/www/html
+    networks:
+      - fu3-networks-dev
+    depends_on:
+      - php-db-dev
+
+  php-db-dev:
+    image: mysql:8.0 # 現在使用しているXfreeのMySQLは5.0.95
+    container_name: fu3-db-dev
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sns
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+    volumes:
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+      - mysql-data:/var/lib/mysql
+    networks:
+      - fu3-networks-dev
+
+  php-adminer-dev:
+    image: adminer:4.8.1
+    container_name: fu3-adminer-dev
+    ports:
+      - "8081:8080"
+    networks:
+      - fu3-networks-dev
+    depends_on:
+      - php-db-dev
+
+volumes:
+  mysql-data:
+
+networks:
+  fu3-networks-dev:
