@@ -19,7 +19,7 @@ if(!$result) {
 }
 
 // 管理者じゃなかったらマイページへ返す
-if(!$_SESSION["login_user"]["type"] == "admin") {
+if((!$_SESSION["login_user"]["type"] == "admin")) {
 
     header("Location: ./mypage.php");
 
