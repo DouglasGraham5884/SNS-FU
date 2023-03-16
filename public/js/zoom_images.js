@@ -22,33 +22,11 @@
             desc.classList.add("active");
         })
     }
-    
-    // for(let i = 0; i <= post_imgs.length; ++i) {
-    // }
-    
-    // function KeyEvent(e) {
-    //     if(e.keyCode == 27) {
-    //         overlay.classList.remove("show");
-    //         post_imgs.forEach((img) => {
-    //             img.classList.remove("zoom");
-    //         });
-    //     }
-    // }
 
     open.addEventListener("click", () => {
         header_overlay.classList.add("show");
         open.classList.add("hide");
     });
-
-    // post_img.addEventListener("click", () => {
-    //     overlay.classList.add("show");
-    //     open.classList.add("hide");
-    // });
-
-    // close.addEventListener("click", () => {
-    //     overlay.classList.remove("show");
-    //     open.classList.remove("hide");
-    // });
 
     // 画像をクリックすると拡大表示
     post_imgs.forEach((img) => {

@@ -261,7 +261,7 @@ class DataLogic {
      */
     public static function paging($page, $user_id, $mode) {
 
-        define("ONE_PAGE_VOL", 5);
+        if(!defined("ONE_PAGE_VOL")) define("ONE_PAGE_VOL", 5);
         
         // $posts = DataLogic::showPostAll();
         $offset = ONE_PAGE_VOL * ($page - 1);
@@ -383,7 +383,6 @@ class DataLogic {
     }
 
     /**
-     * 23/02/27 description表示をしばらく断念することになったので要らない子になりました。
      * getDescriptionByFilePathを呼び出してdescription（写真の説明）を返す
      * @param string $path
      * @return string description
@@ -397,7 +396,6 @@ class DataLogic {
     }
 
     /**
-     * 23/02/27 同上。
      * file_pathを使用してimageの情報を返す
      * @param string $path
      * @return array|bool $result

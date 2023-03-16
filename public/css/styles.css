@@ -96,12 +96,6 @@ textarea {
     height: 40vh;
 }
 
-/* textarea {
-    width: 100%;
-    max-width: 480px;
-    height: 6rem;
-} */
-
 input[type="submit"] {
     cursor: pointer;
     background: var(--color1);
@@ -167,23 +161,9 @@ header {
     display: flex;
 }
 
-/* .header-nav li {
-
-} */
-
 .pc-menu .header-nav li + li {
     margin-left: 40px;
 }
-
-/* .header-nav li a {
-    
-} */
-
-/* .header-icon {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-} */
 
 .sp-menu {
     display: none;
@@ -237,10 +217,6 @@ header {
 
 /* main */
 
-/* main {
-    padding-bottom: 285px;
-} */
-
 main {
     min-height: calc(100vh - 285px - 200px - 10px);
 }
@@ -258,8 +234,6 @@ main {
     padding-top: 10px;
     border-top: 1px #ffffff80 solid;
 }
-
-/* .mesage-bord li p {} */
 
 .created_at {
     text-align: right;
@@ -294,28 +268,13 @@ main {
     color: var(--color1);
 }
 
-/* #name {
-    width: 100%;
-    max-width: 25%;
-    min-width: 240px;
-}
-
-#message {
-    width: 100%;
-    max-width: 80%;
-    min-width: 240px;
-} */
-
 /* footer */
 
 .footer-box {
     height: 285px;
-    /* width: 100%; */
     margin: 0;
     padding: 0;
     text-align: center;
-    /* position: absolute;
-    bottom: 0; */
     background: #222;
 }
 

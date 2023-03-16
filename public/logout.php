@@ -29,15 +29,6 @@ if(!$logout) {
 $user_id = $_SESSION["login_user"]["user_id"];
 $user_name = $_SESSION["login_user"]["user_name"];
 
-// ログインしているか判定し、セッションが切れていたらログインするように指示する
-// $result = UserLogic::checkLogin();
-
-// if(!$result) {
-
-//     exit("セッションが切れました。再度ログインしてください。");
-    
-// }
-
 // ログアウト
 UserLogic::logout($user_id, $user_name);
 

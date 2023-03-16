@@ -59,11 +59,6 @@
 }
 
 .zoom {
-    /* position: absolute; */
-    /* top: calc(100vh - (hight / 2));
-    left: calc(100vw - (width / 2)); */
-    /* top: 50vh;
-    left: 50vw; */
     z-index: 200;
     max-height: calc(100vh - 120px);
     max-width: calc(100vw - 120px);
@@ -81,7 +76,6 @@
     .post-imgs {
         margin-top: 10px;
         display: grid;
-        /* grid-template-columns: repeat(2, 1fr); */
         grid-template-columns: 1fr 1fr;
         gap: 5px;
     }

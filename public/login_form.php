@@ -63,8 +63,6 @@ UserLogic::down_session();
                 </p>
         
             </form>
-        
-            <!-- <a class="signup-link" href="./signup_form.php">新規登録はこちら</a> -->
             
         </div><!-- container -->
     </main>

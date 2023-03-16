@@ -18,9 +18,6 @@ if(!$result) {
     
 }
 
-// if(isset($_SESSION["login_user"])) {
-//     $login_user = $_SESSION["login_user"];
-// }
 $login_user = $_SESSION["login_user"];
 
 if(

@@ -36,20 +36,17 @@ if(
     $file_error = $file["error"];
     $file_size = $file["size"];
 
-    $allow_ext = array("jpg", "jpeg", "png", "svg", "raw");
+    $allow_ext = array("jpg", "jpeg", "png", "svg", "raw"); // とりあえず
     $file_ext = [];
     for($i = 0; $i < count($file["name"]); $i++) {
         $file_ext[] = strtolower(pathinfo($file_name[$i], PATHINFO_EXTENSION));
     }
-    
-    // $local_dir = "/var/www/html/public/img/post_img/"; // 本番はこっち
-    // $local_dir = "img/post_img/"; // サーバーに公開したら変更する // なんかこれも違う
 
-    $local_path = "/home/fugraham/fugraham.php.xdomain.jp/public_html/";
-    $remote_path = "http://fugraham.php.xdomain.jp/";
-    $img_path = "public/img/post_img/";
-    $local_dir = $local_path . $img_path;
-    $remote_dir = $remote_path . $img_path;
+    // 練習用（Docker）
+
+    $upload_dir = "img/post_img/";
+    $local_dir = $upload_dir;
+    $remote_dir = $upload_dir;
     
     $save_file_name = [];
     for($i = 0; $i < count($file["name"]); $i++) {
@@ -83,7 +80,6 @@ if(
 }
 
 // 画像の説明（ディスクリプション）
-// $description = isset($_POST["description"]) ? filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY) : NULL;
 $description = isset($_POST["description"]) ? filter_input(INPUT_POST, "description", FILTER_DEFAULT, FILTER_REQUIRE_ARRAY) : NULL;
 if(
     isset($_FILES) &&
@@ -93,8 +89,6 @@ if(
         if(!$file_name[$i] == "") {
 
             $description[] = $description[$i] ?? NULL;
-            // for($i = 0; $i < 4; $i++) {
-            // }
 
         }
     }
@@ -165,23 +159,6 @@ if(count($err) === 0) {
 
             for($i = 0; $i < count($file["name"]); $i++) {
                 if(!$file_name[$i] == "") {
-                    
-                    // var_dump($file);
-        
-                    // if(count($file["name"]) === 1) {
-                        
-                    //     $fileData = [
-                    //         "user_id" => $user_id,
-                    //         "lastPostId" => $lastPostId,
-                    //         "save_file_name" => $save_file_name,
-                    //         "file_path" => $file_path,
-                    //         "description" => $description,
-                    //         "file_tmp_name" => $file_tmp_name
-                    //     ];
-                        
-                    // } else {
-                        
-                    // }
                     
                     $fileData = [
                         "user_id" => $user_id,

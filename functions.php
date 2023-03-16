@@ -17,11 +17,7 @@ function h($str) {
  * @return string $token
  */
 function setToken() {
-    // 旧タイプのトークンシステムを使用する場合はFU2以前のcreateToken（非推奨？）
-    // 全体をif(!isset($_SESSION["csrf_token"])) {}で囲むかどうかの違い
 
-    // $token = bin2hex(random_bytes(32));
-    // $_SESSION["token"] = $token;
     $_SESSION["token"] = bin2hex(random_bytes(32));
 
     return $_SESSION["token"];
@@ -34,12 +30,7 @@ function setToken() {
  * @return void
  */
 function validateToken() {
-    // 旧タイプのトークンシステムを使用する場合はFU2以前のcreateToken（非推奨？）
-    // 最後にunset($_SESSION["token"])をするかどうかの違い
 
-    // $token = filter_input(INPUT_POST, "token");
-    
-    // if(empty($_SESSION["token"]) || $_SESSION["token"] !== $token) {}
     if(
         empty($_SESSION["token"]) ||
         $_SESSION["token"] !== filter_input(INPUT_POST, "token")
@@ -54,7 +45,7 @@ function validateToken() {
 }
 
 /**
- * $_SESSION["err"]を削除する
+ * $_SESSION["err"]を空にする
  * @param void
  * @return void
  */
@@ -64,6 +55,11 @@ function err_destroy() {
     
 }
 
+/**
+ * $_SESSION["token"]を削除する
+ * @param void
+ * @return void
+ */
 function token_destroy() {
 
     unset($_SESSION["token"]);

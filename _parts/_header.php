@@ -13,7 +13,6 @@
                             <?php if($login_user["type"] == "admin") : ?>
                                 <li><a href="/public/signup_form.php">Sign Up</a></li>
                             <?php endif; ?>
-                            <!-- <li><a href="/public/login_form.php">Log in</a></li> -->
                         </ul>
                     </nav>
                 </div><!-- pc-menu -->
